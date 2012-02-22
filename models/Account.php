@@ -16,6 +16,14 @@ namespace saas;
  *   echo Account::$current->level;
  *   
  *   ?>
+ *
+ * Note that if you're using this in `bootstrap.php`, you must add this
+ * line first:
+ *
+ *   $memcache = Cache::init (conf ('Cache'));
+ *
+ * This initializes the cache which is used by `determine()` to eliminate
+ * repeat database lookups.
  */
 class Account extends \ExtendedModel {
 	public $table = 'saas_account';
