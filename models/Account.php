@@ -17,7 +17,7 @@ namespace saas;
  *   
  *   ?>
  */
-class Account extends ExtendedModel {
+class Account extends \ExtendedModel {
 	public $table = 'saas_account';
 	public $key = 'user';
 

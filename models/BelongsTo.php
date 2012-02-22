@@ -22,7 +22,7 @@ namespace saas;
  *   
  *   ?>
  */
-class BelongsTo extends Model {
+class BelongsTo extends \Model {
 	public $table = 'saas_belongs_to';
 	public $key = 'user';
 
@@ -37,7 +37,7 @@ class BelongsTo extends Model {
 	 * from `\saas\Account::$current->user`.
 	 */
 	public static function account ($user = false, $account = false) {
-		$user = $user ? $user : User::val ('id');
+		$user = $user ? $user : \User::val ('id');
 		$account = $account ? $account : Account::$current->user;
 
 		return db_shift (
